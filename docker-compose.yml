@@ -1,0 +1,13 @@
+services:
+  mediaslide-sockets:
+    build: .
+    ports:
+      - 5000:5000
+      - 9229:9229
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    command: "npm run start"
+    environment:
+      PORT: 5000
+      NODE_ENV: development
